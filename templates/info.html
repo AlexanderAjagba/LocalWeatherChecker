@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Weather checker by Alexander A</title>
+	<style type="text/css">
+		body {
+			background-color: rgba(173, 216, 230, 0.5);
+		}
+		#box {
+			margin: auto;
+			margin-top: 50px;
+			width: 500px;
+			height: 400px;
+			background-color: white;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+			border-radius: 10px;
+			border: 2px solid #ddd;
+			padding: 20px;
+			position: relative;
+		}
+		#search-form {
+			position: absolute;
+			bottom: 20px;
+			left: 20px;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+		}
+		#search-input {
+			padding: 10px;
+			border-radius: 20px;
+			border: 2px solid #007bff;
+			font-size: 16px;
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+			flex-grow: 1;
+			margin-right: 10px;
+			width: 80%;
+			font-weight: bold;
+		}
+		#search-button {
+			padding: 10px 20px;
+			border-radius: 20px;
+			background-color: #007bff;
+			color: white;
+			border: none;
+			font-size: 16px;
+			cursor: pointer;
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<h1>Weather Checker/h1>
+		<p>please type in a relveant city name</p>
+		<form id="search-form" method="GET" action="/search">
+			<input id="search-input" type="text" name="city" placeholder="Enter a city name...">
+			<button id="search-button" type="submit">Enter</button>
+		</form>
+	</div>
+</body>
+</html>
