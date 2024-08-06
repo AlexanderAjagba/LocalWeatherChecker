@@ -1,5 +1,7 @@
 import requests
 from pytemp import pytemp #docs located at https://pypi.org/project/pytemp/ by zainraza
+from dotenv import load_dotenv
+import os
 
 
 def weather_status_container(): #set weather info into a container 
@@ -18,9 +20,10 @@ def weather_status_container(): #set weather info into a container
         weather_data_collection["country_name"] = geo_info[0]["country"]
     return weather_data_collection    
 
-with open("api_key.txt") as  api_loc:
-    api_key = api_loc.read()
-api_loc.close()
+load_dotenv()
+api_key = os.getenv("api_key")
+if not api_key:
+    raise ValueError("No API Key found")
 
 geolocator_url = "http://api.openweathermap.org/geo/1.0/direct?"
 relevant_city_name = input()
